@@ -1,14 +1,14 @@
-# Api_yamdb
+# Api yamdb by [Denyacore](https://github.com/Denyacore)
 
-## Описание проекта:
-API проекта api_yamdb.
+![Api Yamdb](https://github.com/Denyacore/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
+Альфа версия проекта [Api Yamdb](https://github.com/Denyacore/api_yamdb) с настроенными *Continuous Integration* и *Continuous Deployment*
+
 
 
 ## Шаблон наполнения env-файла
 
-Секретные ключи, доступы, токены не следует хранить в коде. 
-А для работы приложения их нужно передать в контейнер.
-Для этого нужно - создать файл .env и прописать переменные окружения в нём.
+Для функционирования - создать файл .env и прописать переменные окружения в нём.
 
 ```bash
 DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
@@ -19,24 +19,21 @@ DB_HOST=db # название сервиса (контейнера)
 DB_PORT=5432 # порт для подключения к БД
 ```
 
-## Описание команд для запуска приложения в контейнерах
-Запустите docker-compose командой из директории, где находится файл docker-compose.yaml
+## Запуск
+
+Выполнить команду из директории, где находится файл docker-compose.yaml
 ```bash
 docker-compose up
 ```
-Теперь в контейнере web нужно выполнить миграции, создать суперпользователя и собрать статику. 
-Команды внутри контейнеров выполняют посредством подкоманды docker-compose exec. 
-Это эквивалент docker exec: с её помощью можно выполнять произвольные команды в сервисах внутри контейнеров.
+Выполнить миграции, создать суперпользователя и собрать статику. 
 ```bash
 docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
 ```
 ## Описание команды для заполнения базы данными
-Задачу хранения данных в докере решает volume. 
-В самом общем смысле volume — это директория, доступная для контейнера. 
 
-Измените файл settings.py, чтобы значения загружались из переменных окружения:
+Отредактировать settings.py, чтобы значения загружались из переменных окружения:
 ```bash
 DATABASES = {
     'default': {
@@ -49,11 +46,10 @@ DATABASES = {
     }
 }
 ```
-Дальше проект api_yamdb будет работать с PostgreSQL.
 
 ## Примеры запросов:
 
-Пример POST-запроса с токеном Антона Чехова: добавление нового поста.
+Добавление нового поста.
 
 *POST .../api/v1/posts/*
 
@@ -75,7 +71,8 @@ DATABASES = {
     "pub_date": "2021-06-01T08:47:11.084589Z"
 }
 ```
-Пример POST-запроса с токеном Антона Чехова: отправляем новый комментарий к посту с id=14.
+Добавление комментария к посту:
+
 *POST .../api/v1/posts/14/comments/*
 
 ```
@@ -94,7 +91,7 @@ DATABASES = {
     "created": "2021-06-01T10:14:51.388932Z"
 }
 ```
-Пример GET-запроса с токеном Антона Чехова: получаем информацию о группе.
+Получение информацию о группе:
 
 *GET .../api/v1/groups/2/*
 
@@ -109,7 +106,7 @@ DATABASES = {
 }
 ```
 
-Пример GET-запроса с возвращением всех подписки пользователя Антона Чехова.
+Все подписки пользователя:
 
 *GET .../api/v1/follow/*
 
@@ -121,5 +118,3 @@ DATABASES = {
     "following": "Максим горький"
 }
 ```
-
-[![Django-app workflow](https://github.com/Denyacore/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)]
