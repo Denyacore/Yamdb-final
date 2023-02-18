@@ -1,5 +1,5 @@
 import api.v1.views
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework import routers
 
 from .views import get_token, signup
