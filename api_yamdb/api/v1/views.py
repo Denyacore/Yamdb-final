@@ -1,14 +1,11 @@
-from api.v1.permissions import (
-    AuthorAdminModeratorOrReadOnly, IsAdmin, IsAdminOrReadOnly
-)
-from api.v1.serializers import (SignUpSerializer, ConfirmationCodeSerializer,
-                                UserSerializer, UserEditSerializer,
-                                CategorySerializer, GenreSerializer,
-                                TitleReadSerializer, TitleWriteSerializer,
-                                ReviewSerializer, CommentSerializer,)
-from reviews.models import Category, Genre, Review, Title, User
-from .mixins import CreateDestroyViewSet
 from api.v1.filters import TitleFilter
+from api.v1.permissions import (AuthorAdminModeratorOrReadOnly, IsAdmin,
+                                IsAdminOrReadOnly)
+from api.v1.serializers import (CategorySerializer, CommentSerializer,
+                                ConfirmationCodeSerializer, GenreSerializer,
+                                ReviewSerializer, SignUpSerializer,
+                                TitleReadSerializer, TitleWriteSerializer,
+                                UserEditSerializer, UserSerializer)
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 from django.db.models import Avg
@@ -18,8 +15,11 @@ from rest_framework import filters, permissions, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
+from reviews.models import Category, Genre, Review, Title, User
 
 from api_yamdb.settings import DEFAULT_FROM_EMAIL
+
+from .mixins import CreateDestroyViewSet
 
 
 @api_view(['POST'])
