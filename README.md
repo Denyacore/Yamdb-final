@@ -65,6 +65,11 @@ DATABASES = {
 
 ## Примеры запросов:
 
+Проект работает на :  [localhost](http://localhost)
+
+1) http://84.201.143.2/api/v1/
+2) http://84.201.143.2/admin
+
 Добавление нового поста.
 
 *POST .../api/v1/posts/*
