@@ -57,7 +57,7 @@ jobs:
           with:
             context: api_yamdb
             push: true
-            tags: denyacore/yamdb_final:latest
+            tags: denyacore/infra_project:latest
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
