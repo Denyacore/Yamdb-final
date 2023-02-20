@@ -10,21 +10,25 @@
 
 ## Использованные технологии
 
+[Python 3.7](https://www.python.org/)
 
->requests 2.26.0  
-django 2.2.16  
-djangorestframework 3.12.4  
-PyJWT 2.1.0  
-pytest 6.2.4  
-pytest-django 4.4.0  
-pytest-pythonpath 0.7.3  
-django-filter 21.1  
-djangorestframework-simplejwt 5.2.2  
-gunicorn==20.0.4  
-psycopg2-binary==2.8.6  
-asgiref==3.2.10  
-pytz==2020.1  
-sqlparse==0.3.1  
+[Django version 2.2](https://www.djangoproject.com/)
+
+[Django Rest Framework 3.2.14](https://img.shields.io/badge/Django%20REST%20Framework--green)
+
+[PostgreSQL 13.0](https://www.postgresql.org/)
+
+[Docker 20.10](https://www.docker.com/)
+
+[Docker-compose 3.8](https://www.docker.com/)
+
+[Nginx 201.18](https://nginx.org/ru/)
+
+[Docker hub](https://www.docker.com/products/docker-hub)
+
+[Github actions](https://github.com/features/actions)
+
+[Yandex.cloud](https://cloud.yandex.ru/)
 
 ## Шаблон наполнения env-файла
 
@@ -83,8 +87,8 @@ DATABASES = {
 
 Проект работает на :  [localhost](http://localhost)
 
-1) http://84.201.143.2/api/v1/
-2) http://84.201.143.2/admin
+1) http://51.250.16.52/api/v1/
+2) http://51.250.16.52/admin
 
 Добавление нового поста.
 
