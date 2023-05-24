@@ -1,4 +1,4 @@
-# Api yamdb by [Denyacore](https://github.com/Denyacore)
+# Api expertmdb by [Denyacore](https://github.com/Denyacore)
 
 ![Api Yamdb](https://github.com/Denyacore/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
